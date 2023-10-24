@@ -1,0 +1,13 @@
+.feed {
+  flex: 5.5;
+  padding: 20px;
+}
+
+.feedWrapper {
+  /* position: relative; */
+}
+
+.progress {
+  width: fit-content;
+  margin: 100px auto;
+}
