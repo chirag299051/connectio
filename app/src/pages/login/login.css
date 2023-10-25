@@ -85,9 +85,12 @@
 
 @media screen and (max-width: 768px) {
   .login-wrapper {
-    flex-direction: column-reverse;
+    display: block;
   }
   .login-register-btn {
     width: 100%;
+  }
+  .login-left {
+    display: none;
   }
 }
