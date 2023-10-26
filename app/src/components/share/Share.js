@@ -38,6 +38,7 @@ const Share = () => {
     //   desc: desc.current.value,
     // };
     dispatch(createPost(formDataObject));
+    setFile(null);
   };
 
   // const handleSelectFile = (e) => setFile(e.target.files[0]);

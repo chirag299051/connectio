@@ -20,6 +20,18 @@
   display: flex;
   align-items: center;
 }
+/* .post-top-right {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.post-top-right:hover {
+  background-color: rgb(240, 240, 240);
+} */
 
 .post-profile-img {
   width: 32px;
@@ -75,5 +87,6 @@
 
 .post-comment-text {
   cursor: pointer;
+  opacity: 0.4;
   border-bottom: 1px dashed gray;
 }

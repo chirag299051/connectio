@@ -11,7 +11,7 @@ const Online = ({ user }) => {
           className="rightbar-profile-img"
           src={
             user.profilePicture
-              ? PF + user.profilePicture
+              ? user.profilePicture
               : PF + "person/noAvatar.png"
           }
         />

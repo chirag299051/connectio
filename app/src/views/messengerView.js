@@ -40,7 +40,7 @@ export const MessengerView = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const message = {
-      sender: user._id,
+      sender: { userId: user._id, img: user.profilePicture },
       text: newMessage,
       conversationId: currentChat._id,
     };
@@ -77,7 +77,7 @@ export const MessengerView = () => {
                 <div className="chat-box-top">
                   {messages.map((x) => (
                     <div key={x._id} ref={scrollRef}>
-                      <Message message={x} own={x.senderId === user._id} />
+                      <Message message={x} own={x.sender.userId === user._id} />
                     </div>
                   ))}
                 </div>

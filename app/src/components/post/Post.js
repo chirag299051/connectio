@@ -4,18 +4,20 @@ import { MoreVert } from "@mui/icons-material";
 import { format } from "timeago.js";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { likeDislikePost } from "../../store/actions/postActions";
+import { deletePost, likeDislikePost } from "../../store/actions/postActions";
 import { axiosClient } from "../../configs/axios";
+import Tooltip from "@mui/material/Tooltip";
+import DeleteIcon from "@mui/icons-material/Delete";
+import IconButton from "@mui/material/IconButton";
 import "./post.css";
 
-const PF = process.env.REACT_APP_PUBLIC_FOLDER;
-
-const Post = ({ post }) => {
+const Post = ({ post, handleDelete }) => {
   const { _id, userId, desc, img, likes, comment } = post;
   const [likeCount, setLikeCount] = useState(likes?.length || 0);
   const [user, setUser] = useState(null);
   const { user: currentUser } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
 
   const _isLiked = likes?.includes(currentUser._id);
   const [isLiked, setIsLiked] = useState(_isLiked);
@@ -56,6 +58,11 @@ const Post = ({ post }) => {
               </div>
               <div className="post-top-right">
                 <MoreVert />
+                {/* <Tooltip title="Delete" arrow>
+                  <IconButton onClick={() => handleDelete(_id)}>
+                    <DeleteIcon />
+                  </IconButton>
+                </Tooltip> */}
               </div>
             </div>
             <div className="post-center">
